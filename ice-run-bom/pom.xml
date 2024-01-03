@@ -8,12 +8,12 @@
     <parent>
         <groupId>run.ice.lib</groupId>
         <artifactId>ice-run-lib</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
     <artifactId>ice-run-bom</artifactId>
-    <version>0.0.1</version>
+
     <packaging>pom</packaging>
 
     <properties>
@@ -21,7 +21,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.test.skip>false</maven.test.skip>
         <maven.javadoc.skip>false</maven.javadoc.skip>
-        <ice-run.version>0.0.1</ice-run.version>
         <spring-boot.version>3.2.1</spring-boot.version>
         <spring-cloud.version>2023.0.0</spring-cloud.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
@@ -53,7 +52,7 @@
             <dependency>
                 <groupId>run.ice.lib</groupId>
                 <artifactId>ice-run-core</artifactId>
-                <version>${ice-run.version}</version>
+                <version>${ice-run-lib.version}</version>
             </dependency>
 
         </dependencies>

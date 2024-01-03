@@ -7,7 +7,7 @@
     <parent>
         <groupId>run.ice.lib</groupId>
         <artifactId>ice-run-lib</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
 
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>run.ice.lib</groupId>
             <artifactId>ice-run-core</artifactId>
-            <version>0.0.1</version>
+            <version>${ice-run-lib.version}</version>
         </dependency>
 
     </dependencies>

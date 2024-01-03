@@ -9,7 +9,7 @@
 
     <groupId>run.ice.lib</groupId>
     <artifactId>ice-run-lib</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.1-SNAPSHOT</version>
 
     <name>ice-run-lib</name>
     <description>ice-run 凌汛 Java 类库</description>
@@ -58,12 +58,12 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
 
@@ -127,7 +127,7 @@
                 <version>3.3.0</version>
                 <executions>
                     <execution>
-                        <id>sonatype</id>
+                        <id>ossrh</id>
                         <phase>package</phase>
                         <goals>
                             <goal>jar-no-fork</goal>
@@ -164,7 +164,7 @@
                 <version>3.1.0</version>
                 <executions>
                     <execution>
-                        <id>sonatype</id>
+                        <id>ossrh</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>sign</goal>
@@ -179,8 +179,8 @@
                 <version>1.6.13</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <serverId>sonatype</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>

@@ -25,6 +25,7 @@
         <spring-cloud.version>2023.0.0</spring-cloud.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <jacoco.version>0.8.11</jacoco.version>
+        <swagger.version>2.2.19</swagger.version>
     </properties>
 
     <dependencyManagement>
@@ -47,6 +48,12 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.version}</version>
             </dependency>
 
             <dependency>

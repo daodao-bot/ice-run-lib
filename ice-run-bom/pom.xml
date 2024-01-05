@@ -8,8 +8,7 @@
     <parent>
         <groupId>run.ice.lib</groupId>
         <artifactId>ice-run-lib</artifactId>
-        <version>0.0.1</version>
-        <relativePath/>
+        <version>0.0.2</version>
     </parent>
 
     <artifactId>ice-run-bom</artifactId>
@@ -21,10 +20,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.test.skip>false</maven.test.skip>
         <maven.javadoc.skip>false</maven.javadoc.skip>
-        <spring-boot.version>3.2.1</spring-boot.version>
-        <spring-cloud.version>2023.0.0</spring-cloud.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <jacoco.version>0.8.11</jacoco.version>
+        <native-maven-plugin.version>0.9.28</native-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
+        <lombok.version>1.18.30</lombok.version>
+        <slf4j-api.version>2.0.10</slf4j-api.version>
+        <junit-jupiter-api.version>5.10.1</junit-jupiter-api.version>
+        <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
+        <jackson.version>2.16.1</jackson.version>
         <swagger.version>2.2.19</swagger.version>
     </properties>
 
@@ -32,22 +35,39 @@
 
         <dependencies>
 
-            <!-- spring-boot -->
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
 
-            <!-- spring-cloud -->
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupiter-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jdk8</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
 
             <dependency>
@@ -62,6 +82,12 @@
                 <version>${ice-run-lib.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>run.ice.lib</groupId>
+                <artifactId>ice-run-util</artifactId>
+                <version>${ice-run-lib.version}</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>
@@ -73,13 +99,9 @@
             <plugins>
 
                 <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                </plugin>
-
-                <plugin>
                     <groupId>org.graalvm.buildtools</groupId>
                     <artifactId>native-maven-plugin</artifactId>
+                    <version>${native-maven-plugin.version}</version>
                 </plugin>
 
                 <plugin>
@@ -91,7 +113,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>${jacoco.version}</version>
+                    <version>${jacoco-maven-plugin.version}</version>
                 </plugin>
 
             </plugins>
@@ -117,7 +139,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jacoco.version}</version>
+                <version>${jacoco-maven-plugin.version}</version>
             </plugin>
 
         </plugins>

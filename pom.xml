@@ -9,7 +9,7 @@
 
     <groupId>run.ice.lib</groupId>
     <artifactId>ice-run-lib</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
 
     <name>ice-run-lib</name>
     <description>ice-run 凌汛 Java 类库</description>
@@ -32,7 +32,7 @@
         <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
-        <ice-run-lib.version>0.0.2</ice-run-lib.version>
+        <ice-run-lib.version>0.0.3</ice-run-lib.version>
     </properties>
 
     <dependencies>
@@ -189,6 +189,7 @@
                     <serverId>ossrh</serverId>
                     <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    <stagingProgressTimeoutMinutes>10</stagingProgressTimeoutMinutes>
                 </configuration>
             </plugin>
         </plugins>

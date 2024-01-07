@@ -8,12 +8,16 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public enum CoreError implements ErrorEnum {
+public enum AppError implements ErrorEnum {
 
     /**
      * OK
      */
     OK("000000", "OK"),
+
+    TOKEN_ERROR("111111", "token 错误"),
+
+    PARAM_ERROR("222222", "参数错误"),
 
     /**
      * ERROR

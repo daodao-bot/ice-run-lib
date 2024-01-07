@@ -2,8 +2,8 @@ package run.ice.lib.core.model;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import run.ice.lib.core.error.CoreError;
-import run.ice.lib.core.error.CoreException;
+import run.ice.lib.core.error.AppError;
+import run.ice.lib.core.error.AppException;
 
 @Slf4j
 class ResponseTest {
@@ -25,10 +25,10 @@ class ResponseTest {
         response = Response.ok();
         log.info("{}", response.toJson());
 
-        response = new Response<>(CoreError.ERROR);
+        response = new Response<>(AppError.ERROR);
         log.info("{}", response.toJson());
 
-        response = new Response<>(new CoreException(CoreError.ERROR));
+        response = new Response<>(new AppException(AppError.ERROR));
         log.info("{}", response.toJson());
     }
 

@@ -8,8 +8,8 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import run.ice.lib.core.error.CoreError;
-import run.ice.lib.core.error.CoreException;
+import run.ice.lib.core.error.AppError;
+import run.ice.lib.core.error.AppException;
 import run.ice.lib.core.error.ErrorEnum;
 import run.ice.lib.core.serialize.Serializer;
 
@@ -29,7 +29,7 @@ public class Response<D> implements Serializer {
     @NotEmpty
     @Size(min = 6, max = 6)
     @Pattern(regexp = "^[0-9]{6}$")
-    private String code = CoreError.OK.code;
+    private String code = AppError.OK.code;
 
     /**
      * 如果发生异常，通常会展示具体的异常提示
@@ -37,7 +37,7 @@ public class Response<D> implements Serializer {
     @Schema(title = "message", description = "响应信息，字符串", example = "成功", accessMode = Schema.AccessMode.READ_ONLY)
     @NotEmpty
     @Size(min = 1, max = 255)
-    private String message = CoreError.OK.message;
+    private String message = AppError.OK.message;
 
     /**
      * 通常为复杂的数据对象
@@ -58,7 +58,7 @@ public class Response<D> implements Serializer {
         this.message = message;
     }
 
-    public Response(CoreException exception) {
+    public Response(AppException exception) {
         this.code = exception.getCode();
         this.message = exception.getMessage();
     }

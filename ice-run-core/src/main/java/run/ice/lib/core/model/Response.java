@@ -58,14 +58,14 @@ public class Response<D> implements Serializer {
         this.message = message;
     }
 
-    public Response(AppException exception) {
-        this.code = exception.getCode();
-        this.message = exception.getMessage();
+    public <E extends AppException> Response(E e) {
+        this.code = e.getCode();
+        this.message = e.getMessage();
     }
 
-    public Response(ErrorEnum errorEnum) {
-        this.code = errorEnum.getCode();
-        this.message = errorEnum.getMessage();
+    public <E extends Enum<E> & ErrorEnum> Response(E e) {
+        this.code = e.getCode();
+        this.message = e.getMessage();
     }
 
     public static Response<Ok> ok() {

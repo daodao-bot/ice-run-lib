@@ -7,7 +7,7 @@
     <parent>
         <groupId>run.ice.lib</groupId>
         <artifactId>ice-run-lib</artifactId>
-        <version>0.0.4</version>
+        <version>0.0.5</version>
     </parent>
 
     <artifactId>ice-run-util</artifactId>

@@ -9,10 +9,10 @@
 
     <groupId>run.ice.lib</groupId>
     <artifactId>ice-run-lib</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
 
     <name>ice-run-lib</name>
-    <description>ice-run 凌汛 Java 类库</description>
+    <description>ice-run java lib</description>
     <url>https://github.com/daodao-bot/ice-run-lib</url>
 
     <modules>
@@ -32,7 +32,7 @@
         <maven-gpg-plugin.version>3.1.0</maven-gpg-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
-        <ice-run-lib.version>0.0.4</ice-run-lib.version>
+        <ice-run-lib.version>0.0.5</ice-run-lib.version>
     </properties>
 
     <dependencies>
